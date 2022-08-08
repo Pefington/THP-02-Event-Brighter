@@ -18,7 +18,7 @@ puts "\n"
 puts '~' * 50
 puts "\n"
 print "SAMPLE USER: \n\n"
-tp users, except: %i[created_at updated_at]
+tp users.sample, except: %i[created_at updated_at]
 
 until Event.count == 20
   Event.create!(
@@ -37,7 +37,21 @@ puts "\n"
 puts '~' * 50
 puts "\n"
 print "SAMPLE EVENT: \n\n"
-tp events, except: %i[created_at updated_at]
+tp events.sample, except: %i[created_at updated_at]
+
+until Attendance.count == 100
+  Attendance.create!(
+    attendee: users.sample,
+    event: events.sample
+  )
+end
+attendances = Attendance.all
+
+puts "\n"
+puts '~' * 50
+puts "\n"
+puts "SAMPLE ATTENDANCE: \n\n"
+tp attendances, except: %i[created_at updated_at]
 
 puts "\n"
 puts '~' * 50
