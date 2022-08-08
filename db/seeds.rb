@@ -1,7 +1,7 @@
 require 'faker'
 require 'table_print'
 
-Faker::Config.locale = 'fr'
+Faker::Config.locale = 'en-GB'
 
 until User.count == 50
   User.create(
@@ -26,9 +26,9 @@ until Event.count == 20
     start_date: Faker::Date.forward(days: 30),
     title: Faker::Book.title,
     location: Faker::Address.city,
-    duration: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60].sample,
+    duration: rand(1..12) * 5,
     description: Faker::Quote.yoda,
-    price: rand(10..200)
+    price: rand(1..1000)
   )
 end
 events = Event.all

@@ -22,7 +22,7 @@ class Event < ApplicationRecord
   has_many :attendees, through: :attendances, source: :user
 
   def confirm_send
-    AdminMailer.confirm_email(self).deliver_now
+    EventMailer.confirm_email(self).deliver_now
   end
 
   def start_date_cannot_be_in_the_past
