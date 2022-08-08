@@ -53,7 +53,6 @@ group :development do
   gem 'database_consistency'
   gem 'faker'
   gem 'htmlbeautifier'
-  gem 'letter_opener'
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'solargraph'
