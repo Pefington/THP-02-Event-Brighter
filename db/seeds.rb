@@ -28,7 +28,7 @@ until Event.count == 15
     title: Faker::Book.title,
     location: Faker::Address.city,
     duration: rand(1..12) * 5,
-    description: Faker::Quote.yoda,
+    description: Faker::Quote.yoda + "test test test test test test test test test",
     price: rand(1..1000)
   )
 end
