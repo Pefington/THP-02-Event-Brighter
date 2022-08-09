@@ -29,3 +29,7 @@ main {
 footer {
   margin-top: 4rem;
 }
+
+.card {
+  padding-bottom: 2rem;
+}

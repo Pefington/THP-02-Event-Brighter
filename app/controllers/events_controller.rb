@@ -28,7 +28,7 @@ class EventsController < ApplicationController
       flash[:success] = 'You have successfully created a new event'
       redirect_to event_path(Event.last.id)
     else
-      flash[:error] = @event.errors.each { |m| puts m }
+      @event.errors.full_messages.each { |m| flash.now[:alert] = m }
       render new_event_path
     end
   end
