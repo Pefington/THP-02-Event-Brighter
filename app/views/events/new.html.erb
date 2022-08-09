@@ -1,31 +1,31 @@
  <div class="container text-center">
-  <h3>You want to create a new event? Thank you for making this community a better place!</h3>
+  <h3>You want to create a new event? <br> Thank you for making this community a better place!</h3>
   <br>
-  <%= form_with url: event_index_path, local: true do |form| %>
-    <p>What title do you want to give your gossip?</p>
-    <%= form.text_field :title %>
+  <%= form_with url: events_path, local: true do |form| %>
+    <p>What title do you want to give your event?</p>
+    <%= form.text_field :event_title %>
     <br>
     <br>
     <p>Can you give us some more details?</p>
-    <%= form.text_area :description, size: "70x5" %>
+    <%= form.text_area :event_description, size: "70x5" %>
     <br>
     <br>
     <p>Location</p>
-    <%= form.text_field :location %>
+    <%= form.text_field :event_location %>
     <br>
     <br>
     <p>Starting date</p>
-    <%= form.text_field :start_date %>
+    <%= form.date_field :event_start_date %>
     <br>
     <br>
     <p>How much time is your event gonna last? (increments of 5 minutes only)</p>
-    <%= form.text_field :duration %>
+    <%= form.number_field :event_duration, step: 5 %>
     <br>
     <br>
     <p>What price ($) will attendees have to pay?</p>
-    <%= form.text_field :price %>
+    <%= form.number_field :event_price, in: 1..1000 %>
     <br>
     <br>
-    <%= form.submit "Publish" %>
+    <%= form.submit "Create Event" %>
   <% end %>
 </div>

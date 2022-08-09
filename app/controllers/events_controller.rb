@@ -16,22 +16,20 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(
-      title: title,
-      description: description,
-      start_date: start_date,
-      duration: duration,
-      location: location,
-      price: price
+      title: params[:event_title],
+      description: params[:event_description],
+      start_date: params[:event_start_date],
+      duration: params[:event_duration],
+      location: params[:event_location],
+      price: params[:event_price]
     )
-    @event.admin = User.find_by(id: session[:user_id])
+    @event.admin = current_user
     if @event.save
-      flash.now[:success] = "You have successfully created a new event"
+      flash[:success] = 'You have successfully created a new event'
       redirect_to event_path(Event.last.id)
     else
-      flash.now[:alert] = "Some information seem missing or incomplete. Please try again."
+      flash[:error] = @event.errors.each { |m| puts m }
       render new_event_path
     end
   end
-
-
 end

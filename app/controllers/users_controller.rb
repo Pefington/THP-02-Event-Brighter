@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       last_name: params[:last_name],
       description: params[:description]
     )
-      flash.now[:success] = 'User successfully updated!'
+      flash[:success] = 'User successfully updated!'
       redirect_to profile_path
     else
       @user.errors.full_messages.each { |m| flash.now[:alert] = m }
