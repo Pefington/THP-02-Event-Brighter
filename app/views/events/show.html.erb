@@ -10,7 +10,7 @@
       <span class="fw-bold">Number of attendees:      </span>
       <p class="card-text"><%= @count %></p>
       <span class="fw-bold">Created by:      </span>
-      <p class="card-text"><%= @event.admin.first_name %></p>
+      <p class="card-text"><%= @event.admin.email %></p>
       <span class="fw-bold">Date:      </span>
       <p class="card-text"><%= @event.start_date %> to <%= @event.start_date + @event.duration * 60%></p>
       <span class="fw-bold">Location:      </span>
