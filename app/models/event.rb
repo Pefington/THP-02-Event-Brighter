@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  after_create :confirm_send
+  # after_create :confirm_send
   validates :start_date,
             presence: true,
             if: :start_date_cannot_be_in_the_past
