@@ -4,7 +4,7 @@
       <a class="index" href="/user/<%=current_user.id %>">User n° <%= current_user.id %></a>
     </div>
     <div class= "card-body">
-      <%= form_with url: user_path(current_user.id), method: :patch, local: true do |form| %>
+      <%= form_with url: profile_path, method: :patch, local: true do |form| %>
         <%#La méthode form_with appelle implicitement la méthode post, local true est nécessaire pour rails 5.2 et 6.0%>
         <p>Email</p>
         <%= form.text_field :email, value: @user.email %>

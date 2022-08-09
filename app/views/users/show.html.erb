@@ -1,7 +1,7 @@
 <div class="container text-center">
   <div class="card shadow-sm">
     <div class="card-header">
-      <a class="index" href="/user/<%=current_user.id %>">User n° <%= current_user.id %></a>
+      <a class="index">Profile</a>
     </div>
     <div class= "card-body">
       <p>First name: <br>
@@ -26,6 +26,6 @@
       <%# <br> %>
     </div>
     <p>Do you want to edit your profile?</p>
-    <div><%= link_to "Click here", edit_user_path(current_user.id) %></div>
+    <div><%= link_to "Click here", profile_edit_path %></div>
   </div>
 </div>

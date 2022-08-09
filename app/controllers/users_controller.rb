@@ -2,15 +2,15 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
     if @user.update(
       email: params[:email],
       first_name: params[:first_name],
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       description: params[:description]
     )
       flash.now[:success] = 'User successfully updated!'
-      redirect_to user_path(@user.id)
+      redirect_to profile_path
     else
       @user.errors.full_messages.each { |m| flash.now[:alert] = m }
       render :edit
