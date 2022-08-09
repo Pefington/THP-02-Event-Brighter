@@ -1,5 +1,5 @@
 require 'faker'
-require 'table_print'
+# require 'table_print'
 
 Faker::Config.locale = 'en-GB'
 
@@ -15,11 +15,11 @@ until User.count == 10
 end
 users = User.all
 
-puts "\n"
-puts '~' * 50
-puts "\n"
-print "SAMPLE USER: \n\n"
-tp users.sample, except: %i[created_at updated_at]
+# puts "\n"
+# puts '~' * 50
+# puts "\n"
+# print "SAMPLE USER: \n\n"
+# tp users.sample, except: %i[created_at updated_at]
 
 until Event.count == 15
   Event.create!(
@@ -34,11 +34,11 @@ until Event.count == 15
 end
 events = Event.all
 
-puts "\n"
-puts '~' * 50
-puts "\n"
-print "SAMPLE EVENT: \n\n"
-tp events.sample, except: %i[created_at updated_at]
+# puts "\n"
+# puts '~' * 50
+# puts "\n"
+# print "SAMPLE EVENT: \n\n"
+# tp events.sample, except: %i[created_at updated_at]
 
 until Attendance.count == 40
   Attendance.create!(
@@ -46,14 +46,14 @@ until Attendance.count == 40
     event: events.sample
   )
 end
-attendances = Attendance.all
+# attendances = Attendance.all
 
-puts "\n"
-puts '~' * 50
-puts "\n"
-puts "SAMPLE ATTENDANCE: \n\n"
-tp attendances, except: %i[created_at updated_at]
+# puts "\n"
+# puts '~' * 50
+# puts "\n"
+# puts "SAMPLE ATTENDANCE: \n\n"
+# tp attendances, except: %i[created_at updated_at]
 
-puts "\n"
-puts '~' * 50
-puts "\n"
+# puts "\n"
+# puts '~' * 50
+# puts "\n"
