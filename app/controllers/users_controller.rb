@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(current_user.id)
     if @user.update(
-      email: params[:email],
       first_name: params[:first_name],
       last_name: params[:last_name],
       description: params[:description]
