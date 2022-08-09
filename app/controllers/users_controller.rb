@@ -24,4 +24,14 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  private
+
+  def authenticate_user
+    return if current_user
+
+    flash[:alert] = 'Please log in.'
+    redirect_to new_user_session_path
+  end
+
 end
