@@ -14,5 +14,9 @@
  *= require_self
  */
 header {
-  
+  margin-bottom: 4rem;
+}
+
+card {
+  color: black;
 }
