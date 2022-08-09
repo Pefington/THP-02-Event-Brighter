@@ -1,24 +1,25 @@
-# README
+## Gemfile versions
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- ruby 2.7.6
+- rails 5.2.8.1
 
-Things you may want to cover:
+This program is used to create a website that allows people to create events and take part in others'.
 
-* Ruby version
+## MVC Architecture
 
-* System dependencies
+The `Router` gets the URL typed by the user and call the right `controller`.
+The `Controller` will ask the different databases (here `Events`, `Attendances` and `User`) for data and then calls the right `View` so the data the user wants to see can be displayed.
 
-* Configuration
+### How to run this program
 
-* Database creation
+```ruby
+rails db:drop ==> if this is not the first time running this program
+rails db:create
+rails db:migrate
+rails db:seed
 
-* Database initialization
+rails server
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ Then open a browser to [http://localhost:3000](http://localhost:3000/) to start using the program.
+ You will then be able to sign up, log in, edit your profile, post new events, have a look at other events...
