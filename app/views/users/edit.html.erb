@@ -1,2 +1,23 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="container text-center">
+  <div class="card shadow-sm">
+    <div class="card-header">
+      <a class="index" href="/user/<%=current_user.id %>">User n° <%= current_user.id %></a>
+    </div>
+    <div class= "card-body">
+      <%= form_with url: profile_path, method: :post, local: true do |form| %>
+        <p>First name</p>
+        <%= form.text_field :first_name, value: @user.first_name %>
+        <br>
+        <p>Last name</p>
+        <%= form.text_field :last_name, value: @user.last_name %>
+        <br>
+        <p>Description</p>
+        <%= form.text_field :description, value: @user.description %>
+        <br>
+        <%= form.submit "Publish" %>
+      <% end %>
+      <br>
+      <%= link_to "Click here to change your password", edit_user_registration_path %>
+    </div>
+  </div>
+</div>

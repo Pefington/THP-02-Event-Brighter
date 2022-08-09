@@ -1,7 +1,31 @@
-Title
-Location
-description
-Start date:
-Duration:
-Price:
-Created by the user that is connected! current_user
+ <div class="container text-center">
+  <h3>You want to create a new event? Thank you for making this community a better place!</h3>
+  <br>
+  <%= form_with url: event_index_path, local: true do |form| %>
+    <p>What title do you want to give your gossip?</p>
+    <%= form.text_field :title %>
+    <br>
+    <br>
+    <p>Can you give us some more details?</p>
+    <%= form.text_area :description, size: "70x5" %>
+    <br>
+    <br>
+    <p>Location</p>
+    <%= form.text_field :location %>
+    <br>
+    <br>
+    <p>Starting date</p>
+    <%= form.text_field :start_date %>
+    <br>
+    <br>
+    <p>How much time is your event gonna last? (increments of 5 minutes only)</p>
+    <%= form.text_field :duration %>
+    <br>
+    <br>
+    <p>What price ($) will attendees have to pay?</p>
+    <%= form.text_field :price %>
+    <br>
+    <br>
+    <%= form.submit "Publish" %>
+  <% end %>
+</div>
