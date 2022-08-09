@@ -11,7 +11,7 @@
   </head>
   <body class="bg-black text-white">
     <header>
-      <nav class="navbar navbar-expand-lg bg-light">
+      <nav class="navbar navbar-dark navbar-expand-lg">
         <div class="container-fluid">
           <%= link_to "br8ghter", events_path, class: "navbar-brand" %>
           <%# <form class="d-flex" role="search">
@@ -71,5 +71,9 @@
       </nav>
     </header>
     <%= yield %>
+    <footer class="container">
+      <p class="float-end"><a href="#">Back to top</a></p>
+      <p>© 2017–2022 br8ghter, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </footer>
   </body>
 </html>
