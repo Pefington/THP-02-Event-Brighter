@@ -1,3 +1,7 @@
+# Br8ghter
+
+The app can be found deployed on [https://br8ghter.herokuapp.com](https://br8ghter.herokuapp.com).
+
 ## Gemfile versions
 
 - ruby 2.7.6
@@ -21,5 +25,5 @@ rails db:seed
 rails server
 ```
 
- Then open a browser to [http://localhost:3000](http://localhost:3000/) to start using the program.
- You will then be able to sign up, log in, edit your profile, post new events, have a look at other events...
+Then open a browser to [http://localhost:3000](http://localhost:3000/) to start using the program.
+You will then be able to sign up, log in, edit your profile, post new events, have a look at other events...
