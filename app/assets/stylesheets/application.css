@@ -6,7 +6,27 @@ header {
   height: 18rem;
 }
 
-main,
 footer {
-  width: 100vw;
+  position: relative;
+  bottom: 0;
+}
+
+main {
+  padding-bottom: 4rem;
+}
+
+.marketing {
+  margin-top: 4rem;
+}
+
+.carousel-item > img {
+  opacity: 50%;
+}
+
+.event {
+  margin: 6rem 0;
+}
+
+.event img {
+  margin: 1rem auto;
 }
