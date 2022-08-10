@@ -1,4 +1,5 @@
 class AttendancesController < ApplicationController
+  before_action :authenticate_user!, only: %i[index]
 
   def index
     @event = Event.find(params[:event_id])
