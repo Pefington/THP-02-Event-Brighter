@@ -1,0 +1,14 @@
+<div class="container d-flex justify-content-center text-center">
+  <div class="card shadow-sm w-50 text-bg-light" style="width: 18rem;">
+    <img src="https://source.unsplash.com/1000x500/?" class="card-img-top" alt="Picture">
+    <div class="card-body">
+      <h5 class="card-title fw-bold"><%= @event.title%></h5>
+      <h6 class="fw-bold"><%= @event.title%></h5>
+      <br>
+      <% @attendees.each do |att| %>
+          <p><%= att.user.email %></p>
+          <br>
+      <% end %>
+    </div>
+  </div>
+</div>
