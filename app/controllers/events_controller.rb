@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, only: %i[new show create]
+  after_action :attend_new_event, only: [:create]
 
   def index
     @events = Event.all
@@ -61,5 +62,12 @@ class EventsController < ApplicationController
     @event.destroy
     flash[:success] = 'The gossip was destroyed'
     redirect_to event_index_path
+  end
+
+  private
+
+  def attend_new_event
+    @last_event = Event.last
+    Attendance.create(event_id: @last_event.id, user_id: current_user.id)
   end
 end
