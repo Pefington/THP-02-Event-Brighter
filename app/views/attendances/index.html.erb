@@ -5,8 +5,8 @@
       <h5 class="card-title fw-bold"><%= @event.title%></h5>
       <h6 class="fw-bold"><%= @event.title%></h5>
       <br>
-      <% @attendees.each do |att| %>
-          <p><%= att.user.email %></p>
+      <% @attendees.each_with_index do |att,i| %>
+          <p><%= i + 1 %>. <%= att.user.email %></p>
           <br>
       <% end %>
     </div>
