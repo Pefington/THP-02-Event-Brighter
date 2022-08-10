@@ -17,7 +17,7 @@
       <p class="card-text"><%= @event.location %></p>
       <span class="fw-bold">Price:      </span>
       <p class="card-text"><%= @event.price %></p>
-      <% if @event.admin.id == current_user.id %>
+      <% if @attendance_possible %>
           <br>
           <%= link_to "Attend this event", new_event_attendance_path(@event.id), class: "btn btn-lg btn-primary" %>
       <% end %>

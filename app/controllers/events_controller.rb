@@ -28,7 +28,9 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @count = Attendance.where(event: @event).count
+    @count = Attendance.where(event_id: @event.id).count
+    @attendance_possible = true
+    @attendance_possible = false if Attendance.where(event_id:@event.id, user_id: current_user.id).count == 1
   end
 
   def new
