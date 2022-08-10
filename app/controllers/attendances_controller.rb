@@ -1,7 +1,7 @@
 class AttendancesController < ApplicationController
 
   def index
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:event_id])
     @attendees = Attendance.where(event:@event)
   end
 

@@ -6,10 +6,10 @@
       <h6 class="fw-bold"><%= @event.title%></h5>
       <br>
       <% @attendees.each_with_index do |att,i| %>
-          <p><%= i + 1 %>. <%= att.user.email %></p>
+          <p><%= i + 1 %>. <%= User.find(att.user_id).email%></p>
           <br>
       <% end %>
     </div>
-    <%= link_to "Click here to edit this event", edit_event(@event.id) %>
+    <%= link_to "Click here to edit this event", edit_event_path(@event.id) %>
   </div>
 </div>

@@ -8,6 +8,11 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+   
+  end
+
+  def update
+    @event = Event.find(params[:id])
     if @event.update(
       description: params[:description],
       start_date: params[:start_date],
@@ -21,10 +26,6 @@ class EventsController < ApplicationController
       @event.errors.full_messages.each { |m| flash.now[:alert] = m }
       render edit_event_path(@event.id)
     end
-  end
-
-  def update
-
   end
 
   def show
