@@ -1,5 +1,5 @@
 
-var stripe = Stripe("<%= ENV['STRIPE_PUBLIC_KEY'] %>");
+var stripe = Stripe('<%= Rails.configuration.stripe[:public] %>');
 
 stripe.redirectToCheckout({
   sessionId: '<%= @session.id %>'
