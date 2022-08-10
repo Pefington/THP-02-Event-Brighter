@@ -1,24 +1,24 @@
 <div class="container d-flex justify-content-center text-center">
   <div class="card shadow-sm w-50 text-bg-light">
     <div class="card-header">
-      <div><%= link_to @event.title, event_path(:id) %></div>
+      <div><%= link_to @event.title, event_path(@event.id) %></div>
     </div>
     <div class= "card-body">
-      <%= form_with url: profile_path, method: :post, local: true do |form| %>
+      <%= form_with url: event_path(@event.id), method: :post, local: true do |form| %>
         <p>Description</p>
-        <%= form.text_field :description, value: @event.description %>
+        <%= form.text_area :description, value: @event.description, size: "70x5" %>
         <br><br>
         <p>Location</p>
         <%= form.text_field :location, value: @event.location %>
         <br><br>
         <p>Price</p>
-        <%= form.text_field :price, value: @event.price %>
+        <%= form.text_field :price, in: 1..1000, value: @event.price %>
         <br><br>
         <p>Starting date</p>
-        <%= form.text_field :start_date, value: @event.start_date %>
+        <%= form.datetime_local_field :start_date, value: @event.start_date %>
         <br><br>
         <p>Duration</p>
-        <%= form.text_field :duration, value: @event.duration %>
+        <%= form.number_field :duration, step: 5 ,value: @event.duration %>
         <br><br>
         <%= form.submit "Accept" %>
       <% end %>
