@@ -61,7 +61,7 @@ class EventsController < ApplicationController
     @event = Event.find_by_id(params[:id])
     @event.destroy
     flash[:success] = 'The gossip was destroyed'
-    redirect_to event_index_path
+    redirect_to events_path
   end
 
   private
