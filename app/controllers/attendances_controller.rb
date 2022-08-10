@@ -15,7 +15,7 @@ class AttendancesController < ApplicationController
     # if payment == true
     #   redirect_to event_path(params[:id])
     # else
-    #   render 
+    #   render
     # end
   end
 
