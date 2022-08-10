@@ -1,1 +1,1 @@
-Stripe.api_key = Rails.application.credentials.stripe[:public]
+Stripe.api_key = Rails.application.credentials.stripe[:secret]
