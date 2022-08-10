@@ -19,7 +19,7 @@ class EventsController < ApplicationController
       location: params[:location],
       price: params[:price]
     )
-      flash[:success] = 'You have successfully created a new event'
+      flash[:success] = 'You have successfully updated your event'
       redirect_to event_path(@event.id)
     else
       @event.errors.full_messages.each { |m| flash.now[:alert] = m }

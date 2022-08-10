@@ -4,7 +4,7 @@
       <div><%= link_to @event.title, event_path(@event.id) %></div>
     </div>
     <div class= "card-body">
-      <%= form_with url: event_path(@event.id), method: :post, local: true do |form| %>
+      <%= form_with url: event_path(@event.id), method: :patch, local: true do |form| %>
         <p>Description</p>
         <%= form.text_area :description, value: @event.description, size: "70x5" %>
         <br><br>
