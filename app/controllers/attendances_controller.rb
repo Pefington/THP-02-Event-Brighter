@@ -6,7 +6,7 @@ class AttendancesController < ApplicationController
   end
 
   def new
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:event_id])
   end
 
   def create
