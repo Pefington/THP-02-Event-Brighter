@@ -1,24 +1,24 @@
 class CheckoutController < ApplicationController
   def create
+    event = Event.find(params[:id])
     @session = Stripe::Checkout::Session.create(
       {
+        mode: 'payment',
         success_url: root_url,
-        cancel_url: manage_posts_url,
+        cancel_url: root_url,
         payment_method_types: ['card'],
         line_items: [{
-          name: 'Roommate Posting',
-          amount: 2000,
-          currency: 'usd',
-          quantity: 1
-        }],
-        mode: 'payment',
-        metadata: { event_id: params[:event_id] },
-        customer_email: current_user.email,
-        success_url: manage_posts_url,
-        cancel_url: manage_posts_url
+          quantity: 1,
+          price_data: {
+            currency: 'usd',
+            unit_amount: event.price,
+            product_data: {
+              name: event.title
+            }
+          }
+        }]
       }
     )
-
     respond_to do |format|
       format.js
     end

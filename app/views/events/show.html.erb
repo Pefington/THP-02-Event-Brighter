@@ -18,8 +18,11 @@
       <span class="fw-bold">Price:      </span>
       <p class="card-text"><%= @event.price %></p>
       <% if @event.admin.id == current_user.id %>
-          <br>
-          <%= link_to "Show attendees", event_attendances_path(@event.id), class: "btn btn-lg btn-primary" %>
+        <%= link_to "Edit", edit_event_path(@event), class: "btn btn-primary" %>
+        <%= link_to "Show attendees", event_attendances_path(@event.id), class: "btn btn-primary" %>
+        <%= link_to "Delete", event_path(@event), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+      <% else %>
+        <%= button_to "Book now! (payment)", checkout_index_path, params: {id: @event.id}, remote: true, class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
