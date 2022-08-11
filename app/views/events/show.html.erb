@@ -1,6 +1,10 @@
 <div class="container d-flex justify-content-center text-center">
   <div class="card shadow-sm w-50 text-bg-light" style="width: 18rem;">
-    <img src="https://source.unsplash.com/1000x500/?" class="card-img-top" alt="Picture">
+    <%if @event.event_picture.attached?%>
+      <%= image_tag @event.event_picture, alt: 'event_picture' %>
+    <%else%>
+      <img src="https://source.unsplash.com/1000x500/?" class="card-img-top" alt="Picture">
+    <%end%> 
     <div class="card-body">
       <h5 class="card-title fw-bold"><%= @event.title%></h5>
       <br>
