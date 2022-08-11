@@ -13,7 +13,7 @@ class AttendancesController < ApplicationController
 
   def create
     # if payment == true
-    #   redirect_to event_path(params[:id])
+    #   redirect_to event_url(params[:id])
     # else
     #   render
     # end

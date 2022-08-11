@@ -20,10 +20,10 @@ class EventsController < ApplicationController
       price: params[:price]
     )
       flash[:success] = 'You have successfully updated your event'
-      redirect_to event_path(@event.id)
+      redirect_to event_url(@event.id)
     else
       @event.errors.full_messages.each { |m| flash.now[:alert] = m }
-      render edit_event_path(@event.id)
+      render edit_event_url(@event.id)
     end
   end
 
@@ -50,10 +50,10 @@ class EventsController < ApplicationController
     @event.admin = current_user
     if @event.save
       flash[:success] = 'You have successfully created a new event'
-      redirect_to event_path(Event.last.id)
+      redirect_to event_url(Event.last.id)
     else
       @event.errors.full_messages.each { |m| flash.now[:alert] = m }
-      render new_event_path
+      render new_event_url
     end
   end
 
@@ -61,7 +61,7 @@ class EventsController < ApplicationController
     @event = Event.find_by_id(params[:id])
     @event.destroy
     flash[:success] = 'The gossip was destroyed'
-    redirect_to events_path
+    redirect_to events_url
   end
 
   private

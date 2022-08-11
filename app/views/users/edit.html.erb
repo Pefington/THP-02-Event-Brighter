@@ -4,10 +4,11 @@
       <h4 class="index" href="/user/<%=current_user.id %>">User n° <%= current_user.id %></h4>
     </div>
     <div class= "card-body">
+      <%= form_with url: profile_path, multipart: true do %>
+        <%= file_field_tag :avatar %>
+        <%= submit_tag "mettre à jour" %>
+      <% end %>
       <%= form_with url: profile_path, method: :post, local: true do |form| %>
-        <p><%= file_field_tag :avatar %></p>
-        <br>
-        <p><%= submit_tag "uploader l'avatar" %></p>
         <p>First name</p>
         <p><%= form.text_field :first_name, value: @user.first_name %></p>
         <p>Last name</p>

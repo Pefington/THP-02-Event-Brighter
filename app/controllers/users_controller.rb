@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       description: params[:description]
     )
       flash[:success] = 'User successfully updated!'
-      redirect_to profile_path
+      redirect_to profile_url
     else
       @user.errors.full_messages.each { |m| flash.now[:alert] = m }
       render :edit
@@ -30,7 +30,6 @@ class UsersController < ApplicationController
     return if current_user
 
     flash[:alert] = 'Please log in.'
-    redirect_to new_user_session_path
+    redirect_to new_user_session_url
   end
-
 end
