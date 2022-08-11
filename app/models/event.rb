@@ -12,10 +12,10 @@ class Event < ApplicationRecord
             length: { in: 5..140 }
   validates :description,
             presence: true,
-            length: { in: 20..1001 }
+            length: { in: 20..1000 }
   validates :price,
             presence: true,
-            numericality: { only_integer: true, greater_than: 0, less_than: 1000 }
+            numericality: { only_integer: true, greater_than: 0, less_or_equal_to: 100_000 }
   validates :location, presence: true
   has_many :attendances
   belongs_to :admin, class_name: 'User'
