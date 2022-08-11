@@ -45,7 +45,8 @@ class EventsController < ApplicationController
       start_date: params[:event_start_date],
       duration: params[:event_duration],
       location: params[:event_location],
-      price: params[:event_price]
+      price: params[:event_price],
+      event_picture: params[:event_picture]
     )
     @event.admin = current_user
     if @event.save

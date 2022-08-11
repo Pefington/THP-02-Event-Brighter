@@ -26,6 +26,10 @@
     <%= form.number_field :event_price, in: 1..1000 %>
     <br>
     <br>
+    <p>Do you have a picture to show us?</p>
+    <%= form.file_field :event_picture %>
+    <br>
+    <br>
     <%= form.submit "Create Event" %>
   <% end %>
 </div>

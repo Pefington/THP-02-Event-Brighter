@@ -20,6 +20,7 @@ class Event < ApplicationRecord
   has_many :attendances
   belongs_to :admin, class_name: 'User'
   has_many :attendees, through: :attendances, source: :user
+  has_one_attached :event_picture
 
   def confirm_send
     EventMailer.confirm_email(self).deliver_now
