@@ -1,0 +1,35 @@
+header {
+  margin-bottom: 4rem;
+}
+
+.carousel-item {
+  height: 18rem;
+}
+
+main {
+  padding-bottom: 4rem;
+}
+
+.marketing {
+  margin-top: 4rem;
+}
+
+.carousel-item > img {
+  opacity: 50%;
+}
+
+.event {
+  margin: 6rem 0;
+}
+
+.event img {
+  margin: 1rem auto;
+}
+
+footer {
+  margin-top: 4rem;
+}
+
+.card {
+  padding-bottom: 2rem;
+}
