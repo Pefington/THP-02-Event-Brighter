@@ -5,10 +5,10 @@ Faker::Config.locale = 'en-GB'
 
 until User.count == 10
   User.create!(
-    email: Faker::Internet.email,
+    email: Faker::Internet.unique.email,
     password: Faker::Internet.password,
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+    first_name: Faker::Name.unique.first_name,
+    last_name: Faker::Name.unique.last_name,
     description: Faker::Quote.yoda
   )
   puts User.last
@@ -20,15 +20,15 @@ users = User.all
 # puts "\n"
 # print "SAMPLE USER: \n\n"
 # tp users.sample, except: %i[created_at updated_at]
-
+Faker::TvShows::SiliconValley.unique.clear
 until Event.count == 15
   Event.create!(
     admin: users.sample,
     start_date: Faker::Date.forward(days: 30),
-    title: Faker::Book.title,
+    title: Faker::TvShows::SiliconValley.unique.invention,
     location: Faker::Address.city,
     duration: rand(1..12) * 5,
-    description: Faker::Quote.yoda + "test test test test test test test test test",
+    description: Faker::TvShows::SiliconValley.unique.quote,
     price: rand(1..1000)
   )
 end
