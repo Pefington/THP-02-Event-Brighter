@@ -4,6 +4,11 @@
       <h4>Profile</h4>
     </div>
     <div class= "card-body">
+      <%if @user.avatar.attached?%>
+        <%= image_tag @user.avatar, alt: 'avatar' %>
+      <%else%>
+        <p>=== User has no avatar yet ===</p>
+      <%end%>
       <p>First name: <br>
         <%= current_user.first_name %>
       </p>
