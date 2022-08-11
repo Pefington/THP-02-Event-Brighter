@@ -16,6 +16,9 @@ class UsersController < ApplicationController
       last_name: params[:last_name],
       description: params[:description]
     )
+      if params[:avatar] != nil
+        @user.avatar.attach(params[:avatar])
+      end
       flash[:success] = 'User successfully updated!'
       redirect_to profile_path
     else

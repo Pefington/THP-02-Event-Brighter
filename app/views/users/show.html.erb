@@ -4,6 +4,9 @@
       <h4>Profile</h4>
     </div>
     <div class= "card-body">
+      <%if current_user.avatar.attached?%>
+        <%= image_tag current_user.avatar, alt: 'avatar' %>
+      <%end%>
       <p>First name: <br>
         <%= current_user.first_name %>
       </p>
