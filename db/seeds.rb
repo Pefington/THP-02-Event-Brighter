@@ -2,7 +2,14 @@ require 'faker'
 # require 'table_print'
 
 Faker::Config.locale = 'en-GB'
-
+User.create(
+  email: 'admin@yopmail.com',
+  password: 'adminpassword',
+  first_name: 'Sam',
+  last_name: 'Pef',
+  description: 'Le mec le plus classe de la galaxie',
+  admin: true
+)
 until User.count == 10
   User.create!(
     email: Faker::Internet.unique.email,

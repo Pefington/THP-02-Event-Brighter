@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2022_08_11_094953) do
     t.string "first_name"
     t.string "last_name"
     t.text "description"
+    t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "reset_password_token"
