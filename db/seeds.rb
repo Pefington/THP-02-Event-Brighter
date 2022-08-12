@@ -18,7 +18,6 @@ until User.count == 10
     last_name: Faker::Name.unique.last_name,
     description: Faker::Quote.yoda
   )
-  puts User.last
 end
 users = User.all
 

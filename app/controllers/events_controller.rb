@@ -71,4 +71,14 @@ class EventsController < ApplicationController
     @last_event = Event.last
     Attendance.create(event_id: @last_event.id, user_id: current_user.id)
   end
+
+  def authenticate_user!
+    if current_user.admin
+      flash[:success] = 'You are admin.'
+      redirect_to admin_event_url
+    else
+      flash[:alert] = 'You need to be an admin to access this page.'
+      redirect_to new_user_session_path
+    end
+  end
 end
