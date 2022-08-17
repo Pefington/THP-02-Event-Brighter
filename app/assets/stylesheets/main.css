@@ -112,3 +112,10 @@
 .spacer-lg {
   height: 30vh;
 }
+
+input.btn-lg, a.btn-lg, a.btn {
+  margin: 0 .75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
