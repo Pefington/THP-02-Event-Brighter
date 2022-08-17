@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: %i[new show create edit update]
+  # before_action :authenticate_user!, only: %i[new show create edit update]
   after_action :attend_new_event, only: [:create]
 
   def index
@@ -72,13 +72,14 @@ class EventsController < ApplicationController
     Attendance.create(event_id: @last_event.id, user_id: current_user.id)
   end
 
-  def authenticate_user!
-    if current_user.admin
-      flash[:success] = 'You are admin.'
-      redirect_to admin_event_url
-    else
-      flash[:alert] = 'You need to be an admin to access this page.'
-      redirect_to new_user_session_path
-    end
-  end
+  # def authenticate_user!
+  #   if current_user.admin
+  #     flash[:success] = 'You are admin.'
+  #     redirect_to admin_event_url
+  #     redirect_to event_url
+  #   else
+  #     flash[:alert] = 'You need to be an admin to access this page.'
+  #     redirect_to new_user_session_path
+  #   end
+  # end
 end
