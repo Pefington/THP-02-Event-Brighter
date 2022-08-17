@@ -1,0 +1,24 @@
+<div class="container col-10 col-sm-8 col-md-6">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <legend>Sign in</legend>
+    <div class="form-group">
+      <%= f.label :email, class: "form-label mt-4" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter email" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password, class: "form-label mt-4" %>
+      <%= f.password_field :password, autocomplete: "password", class: "form-control", placeholder: "Enter password" %>
+    </div>
+    <% if devise_mapping.rememberable? %>
+      <div class="mt-4">
+        <%= f.check_box :remember_me, class: "me-2" %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+    <div class="container d-flex justify-content-center mt-5">
+      <%= f.submit "Sign in", class: "btn btn-lg btn-primary" %>
+      <%= render "devise/shared/links" %>
+    </div>
+  <% end %>
+</div>
